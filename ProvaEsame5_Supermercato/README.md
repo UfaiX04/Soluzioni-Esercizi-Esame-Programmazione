@@ -1,8 +1,6 @@
 ## Esercizio creato da MS e JJ
 # Qua è presente la soluzione dell'esercizio Supermercato
 
-> !!L’ARRAY è DI 10 ELEMENTI!!
-> 
 > Si vuole modellare un supermercato con i prodotti disponibili e le ricevute dei clienti. 
 > 
 > Si definisce una classe Prodotto caratterizzata dagli attributi codice (di tipo int), nome (di tipo String), quantità (di tipo int) e prezzo (di tipo double).
@@ -15,7 +13,7 @@
 > int quantitaProdotto(int codice) che restituisce la quantità disponibile dell’articolo e genera un’eccezione se gli articoli sono inferiori a 1.
 > Prodotto getMaxProdotto() che restituisce il prodotto con più disponibilità in magazzino.
 > 
-> Si definisce la classe Ricevuta che genera la ricevuta d’acquisto contenente la lista degli articoli acquistati, il numero progressivo (di tipo int) e il prezzo totale (di tipo double).
+> Si definisce la classe Ricevuta che genera la ricevuta d’acquisto contenente la lista degli articoli acquistati in un array di tipo Prodotto[], il numero progressivo (di tipo int) e il prezzo totale (di tipo double).
 > 
 > Si definiscono i seguenti metodi:
 > boolean Ricevuta(Prodotto a[], int progressivo) che genera una ricevuta contenente la lista degli articoli acquistati, il prezzo totale e il codice dello scontrino riportando true, rimuovendo dalla quantità il numero di articoli immessi nella ricevuta. Se lo scontrino non può essere creato, viene generato un errore runtime.
