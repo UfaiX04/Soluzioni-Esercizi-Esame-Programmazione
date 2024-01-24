@@ -1,65 +1,116 @@
+/**
+ * La classe Agenda rappresenta un'agenda che può contenere una serie di appuntamenti.
+ */
 public class Agenda {
-    private int appuntamentiMax;
-    public Appuntamento[] appuntamenti;
+    private Appuntamento[] appuntamenti;
+    private int numeroMassimoAppuntamenti;
+    private int numeroAppuntamentiInseriti;
 
-    // Costruttore di default che crea un'agenda con massimo appuntamentiMax appuntamenti
-    public Agenda(int appuntamentiMax) throws Exception {
-        if (appuntamentiMax <= 0) {
-            throw new RuntimeException("Numero di appuntamenti non valido");
-        } else {
-            this.appuntamentiMax = appuntamentiMax;
+    /**
+     * Costruisce un'istanza di Agenda con il numero massimo di appuntamenti specificato.
+     * @param n il numero massimo di appuntamenti
+     * @throws IllegalArgumentException se il numero massimo di appuntamenti è negativo
+     */
+    public Agenda(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Il numero massimo di appuntamenti non può essere negativo");
         }
+        appuntamenti = new Appuntamento[n];
+        numeroMassimoAppuntamenti = n;
+        numeroAppuntamentiInseriti = 0;
     }
 
-    // Aggiunge un appuntamento all'agenda
-    public boolean Aggiungi(Appuntamento appuntamento) {
-        if (appuntamento == null || appuntamenti.length == appuntamentiMax) {
+    /**
+     * Aggiunge un appuntamento all'agenda.
+     * @param a l'appuntamento da aggiungere
+     * @return true se l'appuntamento è stato aggiunto con successo, false altrimenti
+     */
+    public boolean aggiungi(Appuntamento a) {
+        if (a == null || numeroAppuntamentiInseriti == numeroMassimoAppuntamenti || contieneAppuntamento(a)) {
             return false;
-        } else {
-            // Controlla se l'appuntamento è già presente
-            for (int i = 0; i < appuntamenti.length; i++) {
-                if( appuntamenti[i].getGiorno() == appuntamento.getGiorno() && appuntamenti[i].getOra() == appuntamento.getOra() ) {
-                    return false;
-                }
-            }
-
-            // Aggiungi l'appuntamento
-            int index = 0;
-            for (int i = 0; i < appuntamenti.length; i++) {
-                if( appuntamenti[i].crono() < appuntamento.crono() ) {
-                    index = i;
-                }
-            }
-
-            // Sposta l'array
-            for (int i = 0; i < appuntamenti.length; i++) {
-                if( i == index ) {
-                    appuntamenti[i] = appuntamento;
-                } else {
-                    appuntamenti[i] = appuntamenti[i+1];
-                }
-            }
-            return true;
         }
+
+        int posizioneInserimento = 0;
+        while (posizioneInserimento < numeroAppuntamentiInseriti && confrontaAppuntamenti(appuntamenti[posizioneInserimento], a) < 0) {
+            posizioneInserimento++;
+        }
+
+        for (int i = numeroAppuntamentiInseriti; i > posizioneInserimento; i--) {
+            appuntamenti[i] = appuntamenti[i - 1];
+        }
+
+        appuntamenti[posizioneInserimento] = a;
+        numeroAppuntamentiInseriti++;
+        return true;
     }
 
-    // Rimuove l'n-esimo appuntamento piu vicino in ordine cronologico
+    /**
+     * Cancella un appuntamento dall'agenda.
+     * @param n l'indice dell'appuntamento da cancellare
+     * @return true se l'appuntamento è stato cancellato con successo, false altrimenti
+     */
     public boolean disdetta(int n) {
-        if (n < 0 || n >= appuntamenti.length) {
+        if (n < 0 || n >= numeroAppuntamentiInseriti) {
             return false;
-        } else {
-            appuntamenti[n] = null;
-            return true;
         }
+
+        for (int i = n; i < numeroAppuntamentiInseriti - 1; i++) {
+            appuntamenti[i] = appuntamenti[i + 1];
+        }
+
+        appuntamenti[numeroAppuntamentiInseriti - 1] = null;
+        numeroAppuntamentiInseriti--;
+        return true;
     }
 
-    // Ricava il numero totale di appuntamenti
+    /**
+     * Restituisce il numero di appuntamenti presenti nell'agenda.
+     * @return il numero di appuntamenti
+     */
     public int numeroAppuntamenti() {
-        return appuntamenti.length;
+        return numeroAppuntamentiInseriti;
     }
 
-    // Ricava l'appuntamento in indice i
-    Appuntamento appuntamento(int i) {
+    /**
+     * Restituisce l'appuntamento all'indice specificato.
+     * @param i l'indice dell'appuntamento
+     * @return l'appuntamento all'indice specificato, o null se l'indice è fuori dai limiti
+     */
+    public Appuntamento appuntamento(int i) {
+        if (i < 0 || i >= numeroAppuntamentiInseriti) {
+            return null;
+        }
         return appuntamenti[i];
+    }
+
+    /**
+     * Checks if the given appointment is present in the agenda.
+     * 
+     * @param a the appointment to be checked
+     * @return true if the appointment is present, false otherwise
+     */
+    private boolean contieneAppuntamento(Appuntamento a) {
+        for (int i = 0; i < numeroAppuntamentiInseriti; i++) {
+            if (confrontaAppuntamenti(appuntamenti[i], a) == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Compares two appointments based on their day and time.
+     * 
+     * @param a1 the first appointment to compare
+     * @param a2 the second appointment to compare
+     * @return a negative integer if a1 is before a2, a positive integer if a1 is after a2,
+     *         or zero if they are equal
+     */
+    private int confrontaAppuntamenti(Appuntamento a1, Appuntamento a2) {
+        if (a1.getGiorno() == a2.getGiorno()) {
+            return Integer.compare(a1.getOra(), a2.getOra());
+        } else {
+            return Integer.compare(a1.getGiorno(), a2.getGiorno());
+        }
     }
 }

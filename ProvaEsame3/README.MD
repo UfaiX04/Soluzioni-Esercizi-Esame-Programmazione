@@ -1,54 +1,29 @@
-Si vuole modellare un'agenda di appuntamenti in ordine cronologico.
+# CONSEGNA
 
-A tal fine, definire una classe Appuntamento caratterizzato dagli
-attributi "nome" (di tipo String), "giorno" (di tipo int) e "ora"
-(di tipo int). L'attributo "giorno" puo` assumere solo valori
-compresi tra 1 e 365 (ignoriamo la presenza di anni bisestili) e
-l'attributo "ora" puo` assumere solo valori compresi tra 0 e
-23. Definire poi i seguenti metodi:
+Si desidera progettare un sistema per gestire un'agenda di appuntamenti organizzati in ordine cronologico.
 
-Appuntamento(String nome, int giorno, int ora): costruttore, lancia
-un'eccezione runtime se "nome" e` null oppure se "giorno" o "ora"
-non sono valori validi.
+A tale scopo, definire una classe "Appuntamento" caratterizzata dagli attributi "nome" (di tipo String), "giorno" (di tipo int) e "ora" (di tipo int). L'attributo "giorno" può assumere solo valori compresi tra 1 e 365 (ignorando la presenza di anni bisestili), mentre l'attributo "ora" può assumere solo valori compresi tra 0 e 23. Successivamente, definire i seguenti metodi:
 
-String getNome(): getter per attributo "nome".
+1. **Costruttore Appuntamento(String nome, int giorno, int ora):** costruttore che solleva un'eccezione runtime se "nome" è null o se "giorno" o "ora" non rappresentano valori validi.
 
-int getGiorno(): getter per attributo "giorno".
+2. **String getNome():** metodo getter per l'attributo "nome".
 
-int getOra(): getter per attributo "ora".
+3. **int getGiorno():** metodo getter per l'attributo "giorno".
 
-int crono(): restituisce l'ora assoluta dell'appuntamento, ovvero la
-quantita` (giorno - 1) * 24 + ora
+4. **int getOra():** metodo getter per l'attributo "ora".
 
-Definire una classe Agenda che memorizza in un array oggetti di tipo
-Appuntamento in ordine cronologico. Definire i seguenti metodi:
+5. **int crono():** metodo che restituisce l'ora assoluta dell'appuntamento, calcolata come la quantità (giorno - 1) * 24 + ora.
 
-Agenda(int n): costruttore, l'argomento "n" indica il numero massimo
-di appuntamenti che possono essere inseriti. Il costruttore lancia
-un'eccezione runtime se "n" e` negativo.
+Successivamente, definire una classe "Agenda" che memorizzi in un array oggetti di tipo "Appuntamento" ordinati in modo cronologico. Definire i seguenti metodi per la classe "Agenda":
 
-boolean aggiungi(Appuntamento a): aggiunge l'appuntamento "a"
-all'agenda. Se "a" e` null oppure se si e` raggiunta la dimensione
-massima dell'agenda oppure se c'e` gia` un appuntamento nel giorno e
-ora indicati in "a" il metodo non effettua alcuna operazione e
-restituisce false. Altrimenti, il metodo aggiunge "a" rispettando
-l'ordine cronologico degli appuntamenti. Da notare che, in generale,
-il metodo puo` dover effettuare lo scorrimento di alcuni
-appuntamenti gia` presenti nell'agenda.
+1. **Costruttore Agenda(int n):** costruttore in cui l'argomento "n" indica il numero massimo di appuntamenti che possono essere inseriti. Il costruttore solleva un'eccezione runtime se "n" è negativo.
 
-boolean disdetta(int n): rimuove l'n-esimo appuntamento in ordine
-cronologico (0 e` il primo appuntamento, 1 e` il secondo
-appuntamento, ecc.). Restituisce "true" se "n" e` un indice valido,
-ovvero e` relativo ad un appuntamento esistente nell'array, "false"
-altrimenti.  Da notare che, in generale, il metodo puo` dover
-effettuare lo scorrimento degli appuntamenti successivi a quello
-rimosso.
+2. **boolean aggiungi(Appuntamento a):** metodo che aggiunge l'appuntamento "a" all'agenda. Se "a" è null, se è stata raggiunta la dimensione massima dell'agenda o se esiste già un appuntamento nel giorno e ora indicati in "a", il metodo non effettua alcuna operazione e restituisce false. Altrimenti, il metodo aggiunge "a" rispettando l'ordine cronologico degli appuntamenti. Si noti che il metodo potrebbe dover effettuare lo spostamento di alcuni appuntamenti già presenti nell'agenda.
 
-int numeroAppuntamenti(): restituisce il numero di appuntamenti in
-agenda.
+3. **boolean disdetta(int n):** metodo che rimuove l'appuntamento di indice "n" in ordine cronologico (0 è il primo appuntamento, 1 è il secondo, ecc.). Restituisce "true" se "n" è un indice valido, cioè relativo a un appuntamento esistente nell'array, altrimenti restituisce "false". Si noti che il metodo potrebbe dover effettuare lo spostamento degli appuntamenti successivi a quello rimosso.
 
-Appuntamento appuntamento(int i): restituisce l'appuntamento con
-indice "i" oppure null se "i" non e` un indice valido.
+4. **int numeroAppuntamenti():** metodo che restituisce il numero di appuntamenti presenti nell'agenda.
 
-ATTENZIONE. E` vietato l'uso di classi della libreria standard di
-Java ad eccezione di Math, String e delle sottoclassi di Exception.*/
+5. **Appuntamento appuntamento(int i):** metodo che restituisce l'appuntamento con indice "i" o null se "i" non è un indice valido.
+
+Nota: È vietato l'uso di classi della libreria standard di Java, ad eccezione di Math, String e delle sottoclassi di Exception.

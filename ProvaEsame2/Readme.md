@@ -1,3 +1,5 @@
+# CONSEGNA
+
 Si desidera gestire un sistema di prenotazione per visite mediche, 
 che consenta agli utenti di prenotarsi indicando il loro nome e cognome.
 Per realizzare ciò, definiamo la classe "Visita", la quale è caratterizzata da due attributi di tipo stringa,
