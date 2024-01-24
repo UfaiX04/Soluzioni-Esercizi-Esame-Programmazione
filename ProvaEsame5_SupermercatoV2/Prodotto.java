@@ -60,8 +60,13 @@ public class Prodotto {
      * @return la quantità disponibile del prodotto, -1 se il codice non corrisponde
      */
     int quantitàProdotto(int codice) {
-        if(codice == this.codice) return quantità;
-        return -1;
+        if(codice == this.codice) {
+            return quantità;
+        }
+        if (quantità < 1) {
+            return -1;
+        }
+        return codice;
     }
 
     /**

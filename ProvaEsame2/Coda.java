@@ -1,7 +1,17 @@
+/**
+ * La classe Coda rappresenta una coda di visite mediche.
+ * La coda ha una dimensione massima specificata al momento della creazione.
+ * Le visite vengono inserite in coda e possono essere estratte o cancellate.
+ */
 public class Coda {
     private Visita[] coda;
     private int numeroPazienti;
 
+    /**
+     * Costruisce una nuova istanza di Coda con la dimensione massima specificata.
+     * @param numeroMassimoElementi la dimensione massima della coda
+     * @throws IllegalArgumentException se la dimensione massima è negativa
+     */
     public Coda(int numeroMassimoElementi) throws IllegalArgumentException {
         if (numeroMassimoElementi < 0) {
             throw new IllegalArgumentException("Il numero massimo di elementi deve essere non negativo");
@@ -9,6 +19,11 @@ public class Coda {
         coda = new Visita[numeroMassimoElementi];
     }
 
+    /**
+     * Inserisce una visita in coda.
+     * @param v la visita da inserire
+     * @return true se l'inserimento è avvenuto con successo, false altrimenti
+     */
     public boolean inserimento(Visita v) {
         if (v == null) {
             return false;
@@ -25,6 +40,10 @@ public class Coda {
         return true;
     }
 
+    /**
+     * Estrae la visita in testa alla coda.
+     * @return la visita estratta, o null se la coda è vuota
+     */
     public Visita estrazione() {
         if (numeroPazienti == 0) {
             return null; // Nessun elemento presente
@@ -37,6 +56,12 @@ public class Coda {
         return elemento;
     }
 
+    /**
+     * Cancella una visita dalla coda.
+     * @param nome il nome della visita da cancellare
+     * @param cognome il cognome della visita da cancellare
+     * @return true se la visita è stata cancellata con successo, false altrimenti
+     */
     public boolean cancellazione(String nome, String cognome) {
         int index = -1;
         for (int i = 0; i < numeroPazienti; i++) {
