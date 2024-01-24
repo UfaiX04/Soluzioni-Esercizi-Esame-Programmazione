@@ -69,6 +69,22 @@ public class Prodotto {
         return codice;
     }
 
+    public int getCodice() {
+        return codice;
+    }
+
+    public int getQuantità() {
+        return quantità;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public double getPrezzo() {
+        return prezzo;
+    }
+
     /**
      * Restituisce il prodotto con il prezzo maggiore tra il prodotto corrente e quello passato come parametro.
      * 

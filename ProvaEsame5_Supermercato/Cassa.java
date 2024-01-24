@@ -31,5 +31,12 @@ public class Cassa {
         }
         
         r.stampaRicevuta();
+        System.out.println();
+        test(p1.getNome(),"Pasta");
+    }
+
+    private static int t = 0;
+    public static <T> void test(T x, T y) {
+	System.out.println("test " + (t++) + " " + (x.equals(y) ? "OK" : "NO"));
     }
 }
