@@ -1,0 +1,120 @@
+class Prezioso {
+    private int peso;
+
+    public Prezioso(int peso) {
+        if (peso <= 0) {
+            throw new IllegalArgumentException("Il peso deve essere un intero positivo.");
+        }
+        this.peso = peso;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+}
+
+class Pietra extends Prezioso {
+    private int carati;
+
+    public Pietra(int peso, int carati) {
+        super(peso);
+
+        if (carati <= 0) {
+            throw new IllegalArgumentException("Il numero di carati della pietra deve essere un intero positivo.");
+        }
+
+        this.carati = carati;
+    }
+
+    public int getCarati() {
+        return carati;
+    }
+}
+
+class Oro extends Prezioso {
+    private int carati;
+
+    public Oro(int peso, int carati) {
+        super(peso);
+
+        if (carati < 8 || carati > 14) {
+            throw new IllegalArgumentException("Il numero di carati dell'oro deve essere compreso tra 8 e 14.");
+        }
+
+        this.carati = carati;
+    }
+
+    public int getCarati() {
+        return carati;
+    }
+}
+
+class Gioiello {
+    private Prezioso[] componenti;
+    private int numComponenti;
+
+    public Gioiello(int numMaxComponenti) {
+        if (numMaxComponenti < 1) {
+            throw new IllegalArgumentException("Il numero massimo di componenti deve essere almeno 1.");
+        }
+
+        this.componenti = new Prezioso[numMaxComponenti];
+        this.numComponenti = 0;
+    }
+
+    public boolean add(Prezioso prezioso) {
+        if (numComponenti < componenti.length) {
+            componenti[numComponenti] = prezioso;
+            numComponenti++;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean check() {
+        int sommaCaratiPietre = caratiPietre();
+        int pesoComplessivo = 0;
+
+        for (int i = 0; i < numComponenti; i++) {
+            pesoComplessivo += componenti[i].getPeso();
+        }
+
+        return sommaCaratiPietre > pesoComplessivo;
+    }
+
+    public int caratiPietre() {
+        int sommaCarati = 0;
+
+        for (int i = 0; i < numComponenti; i++) {
+            if (componenti[i] instanceof Pietra) {
+                sommaCarati += ((Pietra) componenti[i]).getCarati();
+            }
+        }
+
+        return sommaCarati;
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        try {
+            // Creazione di una pietra e di un oro
+            Pietra pietra1 = new Pietra(5, 3);
+            Oro oro1 = new Oro(10, 12);
+
+            // Creazione di un gioiello con un massimo di 2 componenti
+            Gioiello gioiello = new Gioiello(2);
+
+            // Aggiunta di pietra e oro al gioiello
+            gioiello.add(pietra1);
+            gioiello.add(oro1);
+
+            // Verifica e stampa del risultato
+            System.out.println("Check gioiello: " + gioiello.check());
+            System.out.println("Somma carati pietre: " + gioiello.caratiPietre());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Errore: " + e.getMessage());
+        }
+    }
+}
