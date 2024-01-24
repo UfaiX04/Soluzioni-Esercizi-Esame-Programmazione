@@ -1,4 +1,4 @@
-## Esercizio creato da Matteo Simonetti e Justin Janko
+## Esercizio creato da MS e JJ
 # Qua è presente la soluzione dell'esercizio Supermercato
 
 > !!L’ARRAY è DI 10 ELEMENTI!!
