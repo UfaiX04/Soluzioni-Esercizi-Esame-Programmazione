@@ -17,7 +17,9 @@ Definire la classe **Gioiello** e il suo costruttore che accetta un intero indic
 Viene prodotta un'eccezione se il parametro è minore di 1. 
 
 Definire il metodo `boolean add (Prezioso)` che accetta un prezioso (oro o pietra) e produce `true` se l'aggiunta ha successo, `false` altrimenti.
-Definire il metodo `boolean check()` che verifica se la somma dei carati delle pietre presenti nel gioiello è maggiore al peso complessivo del gioiello. 
+
+Definire il metodo `boolean check()` che verifica se la somma dei carati delle pietre presenti nel gioiello è maggiore al peso complessivo del gioiello.
+
 Definire il metodo `int caratiPietre()` che produce somma del numero dei carati delle pietre presenti nel gioiello. Non modificare la classe **Prezioso**.
 
 Non è consentito l'uso di classi della libreria standard di Java diverse da `String`, `Math` e dalle classi che rappresentano eccezioni. 
