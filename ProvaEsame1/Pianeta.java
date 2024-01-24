@@ -1,21 +1,21 @@
 /**
- * This class represents a planet.
+ * Questa classe rappresenta un pianeta.
  */
 public class Pianeta {
     private String nome;
     private double massa;
     private double distanza;
     /**
-     * Constructs a new Pianeta object with the given nome, massa, and distanza.
+     * Costruisce un nuovo oggetto Pianeta con il nome, la massa e la distanza forniti.
      * 
-     * @param nome     the name of the planet
-     * @param massa    the mass of the planet
-     * @param distanza the distance of the planet from the sun
-     * @throws RuntimeException if the nome is null or the massa or distanza is negative
+     * @param nome     il nome del pianeta
+     * @param massa    la massa del pianeta
+     * @param distanza la distanza del pianeta dal sole
+     * @throws RuntimeException se il nome è nullo o la massa o la distanza sono negative
      */
     public Pianeta(String nome, double massa, double distanza) {
         if (nome == null || nome.isEmpty()) {
-            throw new RuntimeException("Invalid nome");
+            throw new RuntimeException("Nome non valido");
         }
 
         this.nome = nome;
@@ -23,32 +23,32 @@ public class Pianeta {
         this.distanza = distanza;
 
         if (this.massa < 0 || this.distanza < 0) {
-            throw new RuntimeException("Invalid arguments");
+            throw new RuntimeException("Argomenti non validi");
         }
     }
 
     /**
-     * Returns the name of the planet.
+     * Restituisce il nome del pianeta.
      * 
-     * @return the name of the planet
+     * @return il nome del pianeta
      */
     public String getNome() {
         return nome;
     }
 
     /**
-     * Returns the mass of the planet.
+     * Restituisce la massa del pianeta.
      * 
-     * @return the mass of the planet
+     * @return la massa del pianeta
      */
     public double getMassa() {
         return massa;
     }
 
     /**
-     * Returns the distance of the planet from the sun.
+     * Restituisce la distanza del pianeta dal sole.
      * 
-     * @return the distance of the planet from the sun
+     * @return la distanza del pianeta dal sole
      */
     public double getDistanza() {
         return distanza;
