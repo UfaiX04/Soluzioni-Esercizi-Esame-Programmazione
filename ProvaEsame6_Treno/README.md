@@ -1,11 +1,13 @@
 # Treno🚂
-#### Qua è presente la soluzione dell'esercizio Treno
+-- -
+#### ☑️ Qua è presente la soluzione dell'esercizio Treno
+-- -
 ## Traccia:
 >Si vuole realizzare un sistema di gestione di treni.
 > 
 >Il sistema prevede una classe astratta Vagone che descrive un vagone
 >generico. La classe Vagone è caratterizzata da un intero positivo 'peso'
->che esprime il peso in tonnelate del vagone.
+>che esprime il peso in tonnellate del vagone.
 >Specializzare la classe Vagone con le classi Locomotiva e Carrozza.
 >
 >La classe Locomotiva è caratterizzata dall'intero positivo 'cavalli' che esprime
@@ -27,16 +29,14 @@
 >
 >Definire il metodo boolean check() che verifica se la somma
 >dei cavalli delle locomotive presenti è maggiore al peso
->complessivo del tremo.
+>complessivo del treno.
 >
 >Definire il metodo int passeggeri() che produce
 >la somma del numero di posti presenti nel treno.
 >
->Non modificare la classe Vagone.
->Non è consentito l'uso di classi della libreria standard di Java diverse da String,
-
-
->Math e dalle classi che rappresentano eccezioni. In particolare, non è consentito
->l’uso di alcuna classe contenitore (es. ArrayList, Vector, ecc.)
+>**Non modificare la classe Vagone.
+>Non è consentito l'uso di classi della libreria standard di Java diverse da String, Math e dalle classi che rappresentano eccezioni. In particolare, non è consentito
+>l’uso di alcuna classe contenitore (es. ArrayList, Vector, ecc.)**
+>
 >E' fornita la classe Test che esegue alcuni test per verificare le principali
 >funzionalità delle classi Vagone, Locomotiva, Carrozza e Treno
