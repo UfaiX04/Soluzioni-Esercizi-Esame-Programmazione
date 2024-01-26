@@ -38,4 +38,4 @@
 >Math e dalle classi che rappresentano eccezioni. In particolare, non è consentito
 >l’uso di alcuna classe contenitore (es. ArrayList, Vector, ecc.)
 >E' fornita la classe Test che esegue alcuni test per verificare le principali
->funzionalità delle classi Vagone, Locomotiva, Carrozza e Treno****
+>funzionalità delle classi Vagone, Locomotiva, Carrozza e Treno
