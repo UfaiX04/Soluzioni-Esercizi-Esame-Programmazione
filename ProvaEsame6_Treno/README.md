@@ -1,5 +1,6 @@
-# Qua è presente la soluzione dell'esercizio Treno
-
+# Treno🚂
+#### Qua è presente la soluzione dell'esercizio Treno
+## Traccia:
 >Si vuole realizzare un sistema di gestione di treni.
 > 
 >Il sistema prevede una classe astratta Vagone che descrive un vagone
