@@ -21,6 +21,7 @@
  
  Si definiscono i seguenti metodi:
 *  `boolean Ricevuta(Prodotto a[], int progressivo)` che genera una ricevuta contenente la lista degli articoli acquistati, il prezzo totale e il codice dello scontrino riportando `true`, rimuovendo dalla quantità il numero di articoli immessi nella ricevuta. Se lo scontrino non può essere creato, viene generato un errore runtime.
+*  `boolean aggiungiArticolo(Prodotto p)` che aggiunge l'articolo alla ricevuta
 *  `double stampaRicevuta(Ricevuta r)` che stampa nel terminale lo scontrino nel seguente ordine (prodotti, totale, progressivo) e restituisce il valore del totale. Il metodo restituisce `0` se la ricevuta non contiene prodotti o manca il progressivo o il totale è minore di 1.
 *  `void cancellaRicevuta(int codice)` che elimina la ricevuta con il codice dato.
 
