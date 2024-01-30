@@ -29,3 +29,10 @@ l'esame se la somma dei `CFU` relativi agli esami dello studente (incluso l'esam
 
 Riscrivere il metodo `toString` della classe Studente di modo che generi una stringa contenente `nome`, `cognome matricola` e l'elenco
 degli `esami superati` (ovvero con voto >= 18) e relativo voto.
+
+
+>**Non è consentito l'uso di classi della libreria standard di Java diverse da String, Math e dalle classi che rappresentano eccezioni. In particolare, non è consentito
+>l’uso di alcuna classe contenitore (es. ArrayList, Vector, ecc.)**
+>
+>È fornita la classe **Main** che esegue alcuni test per verificare le principali
+>funzionalità delle classi **Esame** e **Studente**
