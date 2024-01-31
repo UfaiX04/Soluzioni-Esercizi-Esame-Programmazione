@@ -1,7 +1,3 @@
-package it.unicam.cs.prog;
-
-import java.util.Objects;
-
 public class Punto {
 	
 	private double x;
@@ -19,10 +15,17 @@ public class Punto {
 	public double getY() {
 		return y;
 	}
+	
+	
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(x, y);
+		int result = 17;
+		long xBits = Double.doubleToLongBits(x);
+		long yBits = Double.doubleToLongBits(y);
+		result = 31 * result + (int) (xBits ^ (xBits >>> 32));
+		result = 31 * result + (int) (yBits ^ (yBits >>> 32));
+		return result;
 	}
 
 	@Override
@@ -37,7 +40,4 @@ public class Punto {
 		return Double.doubleToLongBits(x) == Double.doubleToLongBits(other.x)
 				&& Double.doubleToLongBits(y) == Double.doubleToLongBits(other.y);
 	}
-	
-	
-
 }
