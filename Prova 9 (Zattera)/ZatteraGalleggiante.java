@@ -1,9 +1,19 @@
+/**
+ * La classe ZatteraGalleggiante rappresenta una zattera galleggiante con dimensioni, pacchi e metodi per gestirli.
+ */
 public class ZatteraGalleggiante {
 	private int altezza;
 	private int larghezza;
 	private Pacco[] pacchi;
 	private int numPacchi;
 
+	/**
+	 * Costruisce una nuova istanza di ZatteraGalleggiante con le dimensioni specificate.
+	 * 
+	 * @param altezza l'altezza della zattera
+	 * @param larghezza la larghezza della zattera
+	 * @throws IllegalArgumentException se altezza o larghezza sono minori o uguali a zero
+	 */
 	public ZatteraGalleggiante(int altezza, int larghezza) {
 		if (altezza <= 0 || larghezza <= 0) {
 			throw new IllegalArgumentException("Le dimensioni devono essere maggiori di zero");
@@ -14,6 +24,13 @@ public class ZatteraGalleggiante {
 		this.numPacchi = 0;
 	}
 
+	/**
+	 * Aggiunge un pacco alla zattera in una determinata posizione.
+	 * 
+	 * @param pacco il pacco da aggiungere
+	 * @param posizione la posizione in cui aggiungere il pacco
+	 * @throws IllegalArgumentException se pacco o posizione sono null, o se la posizione è fuori dalle dimensioni della zattera, o se la zattera è piena
+	 */
 	public void aggiungiPacco(Pacco pacco, Punto posizione) {
 		if (pacco == null || posizione == null) {
 			throw new IllegalArgumentException("Il pacco o la posizione non possono essere null");
@@ -29,6 +46,11 @@ public class ZatteraGalleggiante {
 		numPacchi++;
 	}
 
+	/**
+	 * Restituisce il peso totale dei pacchi presenti nella zattera.
+	 * 
+	 * @return il peso totale dei pacchi
+	 */
 	public int getPesoTotale() {
 		int pesoTotale = 0;
 		for (int i = 0; i < numPacchi; i++) {
@@ -37,6 +59,11 @@ public class ZatteraGalleggiante {
 		return pesoTotale;
 	}
 
+	/**
+	 * Restituisce il peso medio dei pacchi presenti nella zattera.
+	 * 
+	 * @return il peso medio dei pacchi
+	 */
 	public double getPesoMedio() {
 		if (numPacchi == 0) {
 			return 0;
@@ -44,14 +71,29 @@ public class ZatteraGalleggiante {
 		return (double) getPesoTotale() / numPacchi;
 	}
 
+	/**
+	 * Restituisce la larghezza della zattera.
+	 * 
+	 * @return la larghezza della zattera
+	 */
 	public int getLarghezza() {
 		return larghezza;
 	}
 
+	/**
+	 * Restituisce l'altezza della zattera.
+	 * 
+	 * @return l'altezza della zattera
+	 */
 	public int getAltezza() {
 		return altezza;
 	}
 
+	/**
+	 * Restituisce le coordinate del baricentro dei pacchi presenti nella zattera.
+	 * 
+	 * @return le coordinate del baricentro nel formato "x, y", o null se non ci sono pacchi nella zattera
+	 */
 	public String getBaricentro() {
 		if (numPacchi == 0) {
 			return null;

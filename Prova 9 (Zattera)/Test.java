@@ -1,3 +1,9 @@
+/**
+ * Questa classe rappresenta un esempio di utilizzo della classe ZatteraGalleggiante.
+ * Viene creato un oggetto ZatteraGalleggiante e vengono aggiunti dei pacchi ad essa.
+ * Vengono poi stampati il peso totale, il peso medio e il baricentro della zattera.
+ * Infine, vengono aggiunti ulteriori pacchi e vengono ristampati i valori.
+ */
 public class Test {
     public static void main(String[] args) {
         try {
