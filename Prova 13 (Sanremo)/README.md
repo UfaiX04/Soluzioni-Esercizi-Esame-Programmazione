@@ -19,7 +19,7 @@ Definire la classe **Serata** che ha come attributi gli artisti che si esibirann
 Creare i seguenti metodi:
 * `nuovaEsibizione(Artista a)` che inserisce un nuovo artista nella serata facendo esibire prima i solisti e poi i gruppi. Il metodo genera un’eccezione in caso non sono più disponibili posti per la serata.
 * `esibizioneInCorso()` che elimina l’esibizione che sta avvenendo e ritorna il prossimo artista in lista. Se la serata è finita viene ritornato null.
-* `eliminaEsibizione()` che elimina una determinata esibizione di un artista di cui è dato il nome d’arte
+* `eliminaEsibizione()` che elimina una determinata esibizione di un artista di cui è dato il nome d’arte e restituisce true se è stato eliminato dalla coda. 
 
 Definire la classe **Sanremo** che aggrega tutte le serate disponibili in questa edizione, il numero di serate e il vincitore.
 
