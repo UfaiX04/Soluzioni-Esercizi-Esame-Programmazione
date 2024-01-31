@@ -18,7 +18,7 @@ Data la classe **Punto** che permette di identificare un punto nel piano. Realiz
    * Offre il metodo `getBaricentro()` restituisce il Punto le cui coordinate (x, y) corrispondente al baricentro dei pacchi. Se p1…, pn sono i pacchi posizionati nei punti pos1,…, posn, il valore `i` delle coordinate del baricentro sono calcolate come:
 ![Formula.png](Formula.png)
 
-
+>**Non modificare la classe Punto e Main. Scaricare le due classi**
 >**Non è consentito l'uso di classi della libreria standard di Java diverse da String, Math e dalle classi che rappresentano eccezioni. In particolare, non è consentito
 >l’uso di alcuna classe contenitore (es. ArrayList, Vector, ecc.)**
 >
