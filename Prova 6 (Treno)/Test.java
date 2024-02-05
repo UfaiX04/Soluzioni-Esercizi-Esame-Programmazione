@@ -1,10 +1,14 @@
+/**
+ * La classe Test è utilizzata per testare il funzionamento delle classi Treno, Locomotiva e Carrozza.
+ * Contiene il metodo main che esegue una serie di test sulle istanze di Treno, Locomotiva e Carrozza.
+ */
 public class Test {
     public static void main(String[] args) throws Exception {
         Treno t = new Treno(4);
         Locomotiva l1 = new Locomotiva(50, 100);
         Locomotiva l2 = new Locomotiva(50, 100);
         Carrozza c1 = new Carrozza(50, 200);
-        Carrozza c2 = new Carrozza(50, 200);
+        Carrozza c2 = new Carrozza(40, 200);
 
         Treno t2 = new Treno(3);
         Locomotiva l3 = new Locomotiva(100, 100);

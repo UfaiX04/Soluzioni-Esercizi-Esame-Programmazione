@@ -1,16 +1,16 @@
 /**
- * Represents a carriage in a train.
- * Extends the Vagone class.
+ * Rappresenta una carrozza in un treno.
+ * Estende la classe Vagone.
  */
 public class Carrozza extends Vagone{
     private int posti;
     
     /**
-     * Constructs a Carrozza object with the specified parameters.
+     * Costruisce un oggetto Carrozza con i parametri specificati.
      * 
-     * @param p the number of the carriage
-     * @param posti the number of seats in the carriage
-     * @throws Exception if the number of seats is less than 40 or greater than 200
+     * @param p il numero della carrozza
+     * @param posti il numero di posti nella carrozza
+     * @throws Exception se il numero di posti è inferiore a 40 o superiore a 200
      */
     public Carrozza(int p, int posti) throws Exception{
         super(p);
@@ -18,9 +18,9 @@ public class Carrozza extends Vagone{
     }
     
     /**
-     * Returns the number of seats in the carriage.
+     * Restituisce il numero di posti nella carrozza.
      * 
-     * @return the number of seats
+     * @return il numero di posti
      */
     public int getPosti() {return posti;}
 }

@@ -1,14 +1,14 @@
 /**
- * This abstract class represents a train car.
+ * Questa classe astratta rappresenta un vagone del treno.
  */
 public abstract class Vagone {
     private int peso;
 
     /**
-     * Constructs a Vagone object with the specified weight.
+     * Costruisce un oggetto Vagone con il peso specificato.
      * 
-     * @param p the weight of the train car
-     * @throws Exception if the weight is not positive
+     * @param p il peso del vagone
+     * @throws Exception se il peso non è positivo
      */
     Vagone(int p) throws Exception {
         if (p > 0)
@@ -18,9 +18,9 @@ public abstract class Vagone {
     }
 
     /**
-     * Returns the weight of the train car.
+     * Restituisce il peso del vagone.
      * 
-     * @return the weight of the train car
+     * @return il peso del vagone
      */
     public int getPeso() {
         return peso;
