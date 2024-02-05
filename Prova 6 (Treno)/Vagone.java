@@ -1,20 +1,20 @@
 /**
- * Questa classe astratta rappresenta un vagone del treno.
+ * Classe astratta che rappresenta un vagone.
  */
 public abstract class Vagone {
     private int peso;
 
     /**
-     * Costruisce un oggetto Vagone con il peso specificato.
+     * Costruttore della classe Vagone.
      * 
-     * @param p il peso del vagone
-     * @throws Exception se il peso non è positivo
+     * @param peso il peso del vagone
+     * @throws IllegalArgumentException se il peso è minore o uguale a 0
      */
-    Vagone(int p) throws Exception {
-        if (p > 0)
-            peso = p;
-        else
-            throw new Exception();
+    public Vagone(int peso) {
+        if (peso <= 0) {
+            throw new IllegalArgumentException("Vagone inesistente.");
+        }
+        this.peso = peso;
     }
 
     /**
