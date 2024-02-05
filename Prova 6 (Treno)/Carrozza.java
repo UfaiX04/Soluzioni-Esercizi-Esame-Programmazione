@@ -1,26 +1,32 @@
 /**
- * Rappresenta una carrozza in un treno.
- * Estende la classe Vagone.
+ * La classe Carrozza rappresenta una carrozza di un treno.
+ * Estende la classe Vagone e aggiunge un attributo per il numero di posti disponibili.
  */
-public class Carrozza extends Vagone{
+public class Carrozza extends Vagone {
     private int posti;
-    
+
     /**
-     * Costruisce un oggetto Carrozza con i parametri specificati.
+     * Costruisce una nuova istanza di Carrozza con il peso specificato e il numero di posti disponibili.
+     * Se il numero di posti è inferiore a 40 o superiore a 200, viene lanciata un'eccezione IllegalArgumentException.
      * 
-     * @param p il numero della carrozza
-     * @param posti il numero di posti nella carrozza
-     * @throws Exception se il numero di posti è inferiore a 40 o superiore a 200
+     * @param peso il peso della carrozza
+     * @param posti il numero di posti disponibili nella carrozza
+     * @throws IllegalArgumentException se il numero di posti è inferiore a 40 o superiore a 200
      */
-    public Carrozza(int p, int posti) throws Exception{
-        super(p);
-        if(posti < 40 || posti > 200) throw new IllegalArgumentException();
+    public Carrozza(int peso, int posti) {
+        super(peso);
+        if(posti < 40 || posti > 200) {
+            throw new IllegalArgumentException("Carrozza inesistente.");
+        }
+        this.posti = posti;
     }
-    
+
     /**
-     * Restituisce il numero di posti nella carrozza.
+     * Restituisce il numero di posti disponibili nella carrozza.
      * 
-     * @return il numero di posti
+     * @return il numero di posti disponibili
      */
-    public int getPosti() {return posti;}
+    public int getPosti() {
+        return posti;
+    }
 }

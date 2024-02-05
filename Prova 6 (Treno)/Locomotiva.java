@@ -1,25 +1,31 @@
 /**
- * La classe Locomotiva rappresenta un vagone di tipo locomotiva.
+ * La classe Locomotiva rappresenta un tipo di vagone che funge da locomotiva.
  * Estende la classe Vagone e aggiunge un attributo per il numero di cavalli.
  */
-public class Locomotiva extends Vagone{
+public class Locomotiva extends Vagone {
     private int cavalli;
 
     /**
-     * Costruttore della classe Locomotiva.
-     * @param p il peso del vagone
+     * Costruisce un oggetto Locomotiva con il peso specificato e il numero di cavalli.
+     * 
+     * @param peso il peso del vagone
      * @param cavalli il numero di cavalli della locomotiva
-     * @throws Exception se il numero di cavalli è negativo
+     * @throws IllegalArgumentException se il numero di cavalli è minore o uguale a 0
      */
-    public Locomotiva(int p, int cavalli) throws Exception {
-        super(p);
-        if(cavalli < 0) throw new IllegalArgumentException("Argomento non valido");
-        else this.cavalli = cavalli;
+    public Locomotiva(int peso, int cavalli) {
+        super(peso);
+        if(cavalli <= 0) {
+            throw new IllegalArgumentException("Locomotiva inesistente.");
+        }
+        this.cavalli = cavalli;
     }
 
     /**
      * Restituisce il numero di cavalli della locomotiva.
+     * 
      * @return il numero di cavalli
      */
-    public int getCavalli() {return cavalli;}
+    public int getCavalli() {
+        return cavalli;
+    }
 }
