@@ -1,21 +1,33 @@
 public class Test {
     public static void main(String[] args) throws Exception {
-        try {
-            Locomotiva locomotiva1 = new Locomotiva(100, 500);
-            Locomotiva locomotiva2 = new Locomotiva(150, 700);
-            Locomotiva carrozza1 = new Locomotiva(80, 100);
-            Locomotiva carrozza2 = new Locomotiva(90, 150);
+        Treno t = new Treno(4);
+        Locomotiva l1 = new Locomotiva(100, 200);
+        Locomotiva l2 = new Locomotiva(100, 200);
+        Carrozza c1 = new Carrozza(100, 200);
+        Carrozza c2 = new Carrozza(100, 200);
 
-            Treno treno = new Treno(4);
-            treno.add(locomotiva1);
-            treno.add(locomotiva2);
-            treno.add(carrozza1);
-            treno.add(carrozza2);
+        Treno t2 = new Treno(3);
+        Locomotiva l3 = new Locomotiva(100, 200);
+        Carrozza c3 = new Carrozza(100, 100);
+        Carrozza c4 = new Carrozza(100, 100);
 
-            System.out.println("Numero di passeggeri: " + treno.passeggeri());
-            System.out.println("La somma dei cavalli delle locomotive è maggiore al peso complessivo del treno? " + treno.check());
-        } catch (IllegalArgumentException e) {
-            System.out.println("Errore: " + e.getMessage());
-        }
+        t.add(l1);
+        t.add(l2);
+        t.add(c1);
+        t.add(c2);
+
+        t2.add(c4);
+        t2.add(c3);
+        t2.add(l3);    
+
+        test(t.check(), true);
+        test(t.passeggeri(), 400);
+        test(t2.check(), true);
+        test(t2.passeggeri(), 200);
+    }
+    
+    private static int t = 0;
+    public static <T> void test(T x, T y) {
+        System.out.println("test " + (t++) + " " + (x.equals(y) ? "OK" : "NO"));
     }
 }

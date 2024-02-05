@@ -1,87 +1,68 @@
 /**
- * La classe Treno rappresenta un treno composto da una serie di vagoni.
+ * La classe Treno rappresenta un treno composto da vagoni.
  */
-public class Treno{
-    private int maxVagoni;
-    private Vagone[] vagoni;
+public class Treno {
+    private int maxVag;
+    private int pesoT;
+    private int cavalliT;
+    private int postiT;
+    private Vagone[] vagone;
 
     /**
-     * Costruttore della classe Treno.
+     * Costruisce un oggetto Treno con il numero massimo di vagoni specificato.
      * 
-     * @param maxVagoni il numero massimo di vagoni che il treno può contenere
-     * @throws Exception se il numero massimo di vagoni è inferiore a 1
+     * @param maxVag il numero massimo di vagoni del treno
+     * @throws IllegalArgumentException se il numero massimo di vagoni è inferiore a 1
      */
-    public Treno(int maxVagoni) throws Exception{
-        if(maxVagoni < 1) throw new IllegalArgumentException("Numero di vagoni massimi errato");
-        else this.maxVagoni = maxVagoni;
-        this.vagoni = new Vagone[maxVagoni];
+    public Treno(int maxVag) {
+        if (maxVag < 1) {
+            throw new IllegalArgumentException("Treno inesistente.");
+        }
+        this.maxVag = maxVag;
+        this.pesoT = 0;
+        this.cavalliT = 0;
+        this.postiT = 0;
+        this.vagone = new Vagone[maxVag];
     }
-
-    public int indiceVagoni = 0;
 
     /**
      * Aggiunge un vagone al treno.
      * 
-     * @param v il vagone da aggiungere
+     * @param x il vagone da aggiungere
      * @return true se il vagone è stato aggiunto con successo, false altrimenti
      */
-    public boolean add(Vagone v) {
-        if(maxVagoni > indiceVagoni) {
-            vagoni[indiceVagoni++] = v;
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * Verifica se il treno è bilanciato in base al numero di cavalli e al peso dei vagoni.
-     * 
-     * @return true se il numero di cavalli è maggiore del peso totale dei vagoni, false altrimenti
-     */
-    public boolean check() {
-        int accCavalli = 0;
-        int accPeso = 0;
-
-        for(int i = 0; i<vagoni.length; i++) {
-            accCavalli = accCavalli + ((Locomotiva) vagoni[i]).getCavalli();
-        }
-
-        for(int i = 0; i<vagoni.length; i++) {
-            accPeso = accPeso + vagoni[i].getPeso();
-        }
-
-        if(accCavalli > accPeso) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * Calcola il numero totale di posti disponibili nel treno.
-     * 
-     * @return il numero totale di posti disponibili nel treno
-     */
-    public int posti() {
-        int acc = 0;
-
-        for(int i = 0; i<vagoni.length; i++) {
-            acc = acc + ((Carrozza)vagoni[i]).getPosti();
-        }
-
-        return acc;
-    }
-
-    public int passeggeri() {
-        int acc = 0;
-
-        for(int i = 0; i < vagoni.length; i++) {
-            if(vagoni[i] instanceof Carrozza) {
-                acc += ((Carrozza) vagoni[i]).getPosti();
+    public boolean add(Vagone x) {
+        for (int i = 0; i < maxVag; i++) {
+            if (vagone[i] == null) {
+                vagone[i] = x;
+                pesoT += x.getPeso();
+                if (x instanceof Locomotiva) {
+                    cavalliT += ((Locomotiva) x).getCavalli();
+                }
+                if (x instanceof Carrozza) {
+                    postiT += ((Carrozza) x).getPosti();
+                }
+                return true;
             }
         }
+        return false;
+    }
 
-        return acc;
+    /**
+     * Verifica se il treno è bilanciato in base al numero di cavalli e al peso totale.
+     * 
+     * @return true se il treno è bilanciato, false altrimenti
+     */
+    public boolean check() {
+        return cavalliT >= pesoT;
+    }
+
+    /**
+     * Restituisce il numero totale di passeggeri presenti nel treno.
+     * 
+     * @return il numero totale di passeggeri nel treno
+     */
+    public int passeggeri() {
+        return postiT;
     }
 }
