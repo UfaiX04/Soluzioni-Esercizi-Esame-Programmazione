@@ -11,7 +11,7 @@ Definire la classe **Artista** con i seguenti attributi:
 * `Cognome` (di tipo String);
 * `Nome d’arte` (di tipo String);
 * `Genere musicale` (di tipo String);
-* `Gruppo` (di tipo boolean), il valore tue se è un gruppo e false se è un cantante singolo;
+* `Gruppo` (di tipo boolean), il valore true se è un gruppo e false se è un cantante singolo;
 
 Definire il costruttore di Artista generando un’eccezione Runtime exception se i dati in ingresso sono mancanti o stringhe minori di due caratteri.
 
