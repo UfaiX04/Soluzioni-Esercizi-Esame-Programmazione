@@ -31,3 +31,5 @@ Definire i seguenti metodi per la classe Esami:
 >
 >È fornita la classe **TestCoda** che esegue alcuni test per verificare le principali
 >funzionalità delle classi **Esame** ed **Esami**
+
+*NB*: Per questo esercizio i nomi dei file e delle classi sono stati modificati per evitare conflitti con altri esercizi.
