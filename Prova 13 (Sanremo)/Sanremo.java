@@ -1,8 +1,15 @@
-public class Sanremo {    
-    private Artista vincitore;
+public class Sanremo {
+    // Definisco i campi della classe Sanremo
+    // Il vincitore è già definito (Come al solito)
+    private Artista vincitore = new Artista("Fuma", "Galli", "Fumagalli", "Fumare", false);
     private Serata[] serate;
     private int numSerate;
-    
+
+    // Definisco il costruttore di Sanremo con il parametro corrispondente
+    public Sanremo(int numberOfSerate) {
+        this.serate = new Serata[numberOfSerate];
+    }
+
     // Definisco il metodo nuovaSerata che inserisce in coda una nuova serata in ordine cronologico
     public boolean nuovaSerata(Serata s) {
         // Controllo che il parametro non sia nullo
@@ -31,9 +38,9 @@ public class Sanremo {
     }
     
     // Definisco il metodo getVincitore che restituisce l'artista vincitore
-    public Artista getVincitore() {
+    public String getVincitore() {
         // Ritorno il valore del campo vincitore
-        return vincitore;
+        return vincitore.getNomeArte();
     }
 
     // Definisco il metodo getDataFinale che restituisce il giorno della finale

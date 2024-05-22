@@ -36,3 +36,5 @@ degli `esami superati` (ovvero con voto >= 18) e relativo voto.
 >
 >È fornita la classe **Main** che esegue alcuni test per verificare le principali
 >funzionalità delle classi **Esame** e **Studente**
+
+# TODO: Aggiungere file TestEsame.java

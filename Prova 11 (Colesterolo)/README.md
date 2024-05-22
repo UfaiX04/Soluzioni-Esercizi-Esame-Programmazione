@@ -29,5 +29,8 @@ Definire i seguenti metodi per la classe Esami:
 >**Non è consentito l'uso di classi della libreria standard di Java diverse da String, Math e dalle classi che rappresentano eccezioni. In particolare, non è consentito
 >l’uso di alcuna classe contenitore (es. ArrayList, Vector, ecc.)**
 >
->È fornita la classe **Test** che esegue alcuni test per verificare le principali
+>È fornita la classe **TestCoda** che esegue alcuni test per verificare le principali
 >funzionalità delle classi **Esame** ed **Esami**
+
+# TODO: Implementare le classi colesterolo, etc...
+# TODO: Implementare il file TestColesterolo.java

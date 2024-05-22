@@ -1,4 +1,4 @@
-public class Test {
+public class TestTV {
     public static void main(String[] args) {
         // Create a Panasonic TV object
         Panasonic tv = new Panasonic(55, "Model XYZ", 20, "Full-HD");

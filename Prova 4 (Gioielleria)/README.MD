@@ -26,11 +26,11 @@ Definire il metodo `boolean check()` che verifica se la somma dei carati delle p
 Definire il metodo `int caratiPietre()` che produce somma del numero dei carati delle pietre presenti nel gioiello. Non modificare la classe **Prezioso**.
 
 Non è consentito l'uso di classi della libreria standard di Java diverse da `String`, `Math` e dalle classi che rappresentano eccezioni. 
-In particolare, non è consentito uso di alcuna classe contenitore (es. `ArrayList`, `Vector`, ecc.) fornita la classe **Test** che esegue alcuni test per verificare le principali funzionalità delle classi 
+In particolare, non è consentito uso di alcuna classe contenitore (es. `ArrayList`, `Vector`, ecc.) fornita la classe **TestCoda** che esegue alcuni test per verificare le principali funzionalità delle classi 
 
 
 >**Non è consentito l'uso di classi della libreria standard di Java diverse da String, Math e dalle classi che rappresentano eccezioni. In particolare, non è consentito
 >l’uso di alcuna classe contenitore (es. ArrayList, Vector, ecc.)**
 >
->È fornita la classe **Test** che esegue alcuni test per verificare le principali
+>È fornita la classe **TestCoda** che esegue alcuni test per verificare le principali
 >funzionalità delle classi **Prezioso**, **Oro**, **Pietra** e **Gioiello**.

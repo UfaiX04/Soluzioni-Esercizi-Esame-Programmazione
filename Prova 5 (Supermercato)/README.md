@@ -32,3 +32,5 @@
 >
 >È fornita la classe **Cassa** che esegue alcuni test per verificare le principali
 >funzionalità delle classi **Prodotto** e **Ricevuta**
+
+# TODO: Aggiungere file TestSupermercato.java

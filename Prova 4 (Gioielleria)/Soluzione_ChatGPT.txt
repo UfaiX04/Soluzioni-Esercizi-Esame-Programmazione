@@ -96,7 +96,7 @@ class Gioiello {
     }
 }
 
-public class Test {
+public class TestCoda {
     public static void main(String[] args) {
         try {
             // Creazione di una pietra e di un oro

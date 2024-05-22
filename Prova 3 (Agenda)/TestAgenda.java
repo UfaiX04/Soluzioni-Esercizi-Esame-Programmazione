@@ -1,4 +1,4 @@
-public class Test {
+public class TestAgenda {
     public static void main(String[] args) throws Exception {
 	Agenda a = new Agenda(10);
 	test(a.appuntamento(0), null);

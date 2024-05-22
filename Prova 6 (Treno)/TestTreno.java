@@ -1,8 +1,8 @@
 /**
- * La classe Test è utilizzata per testare il funzionamento delle classi Treno, Locomotiva e Carrozza.
+ * La classe TestCoda è utilizzata per testare il funzionamento delle classi Treno, Locomotiva e Carrozza.
  * Contiene il metodo main che esegue una serie di test sulle istanze di Treno, Locomotiva e Carrozza.
  */
-public class Test {
+public class TestTreno {
     public static void main(String[] args) throws Exception {
         Treno t = new Treno(4);
         Locomotiva l1 = new Locomotiva(50, 100);

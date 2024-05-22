@@ -1,4 +1,4 @@
-public class Test {
+public class SistemaSolareTest {
     public static void main(String[] args) {
 	SistemaSolare s = new SistemaSolare(8);
 	test(s.nuovo(null), false);

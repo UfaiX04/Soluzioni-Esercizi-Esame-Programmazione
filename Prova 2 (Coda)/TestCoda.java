@@ -1,4 +1,4 @@
-public class Test {
+public class TestCoda {
     public static void main(String[] args) {
         Coda c = null;
         try {

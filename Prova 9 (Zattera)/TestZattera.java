@@ -4,7 +4,7 @@
  * Vengono poi stampati il peso totale, il peso medio e il baricentro della zattera.
  * Infine, vengono aggiunti ulteriori pacchi e vengono ristampati i valori.
  */
-public class Test {
+public class TestZattera {
     public static void main(String[] args) {
         try {
             Pacco pacco1 = new Pacco(10.5);
