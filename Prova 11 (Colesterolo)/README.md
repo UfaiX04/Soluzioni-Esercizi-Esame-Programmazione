@@ -31,6 +31,3 @@ Definire i seguenti metodi per la classe Esami:
 >
 >È fornita la classe **TestCoda** che esegue alcuni test per verificare le principali
 >funzionalità delle classi **Esame** ed **Esami**
-
-# TODO: Implementare le classi colesterolo, etc...
-# TODO: Implementare il file TestColesterolo.java
